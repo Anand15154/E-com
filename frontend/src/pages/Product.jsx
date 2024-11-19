@@ -8,7 +8,7 @@ import RelProducts from '../components/RelProducts';
 
 const Product = () => {
     const { productId } = useParams();
-    const { products, currency } = useContext(ShopContext);
+    const { products, currency, addToCart } = useContext(ShopContext);
 
     const [productData, setProductData] = useState(null);
     const [image, setImage] = useState('');
@@ -76,7 +76,7 @@ const Product = () => {
                             ))}
                         </div>
                     </div>
-                    <button className='bg-black text-white pax-8 py-3 text-s active:bg-gray-700'> ADD TO CART</button>
+                    <button onClick={() => addToCart(productData._id, size)} className='bg-black text-white pax-8 py-3 text-s active:bg-gray-700'> ADD TO CART</button>
                     <hr className='mt-8 sm:w-w/5'></hr>
                     <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'></div>
                     <p>100% Original product</p>
