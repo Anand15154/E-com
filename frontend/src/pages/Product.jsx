@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/assets';
 
+import RelProducts from '../components/RelProducts';
+
+
 const Product = () => {
     const { productId } = useParams();
     const { products, currency } = useContext(ShopContext);
@@ -84,6 +87,21 @@ const Product = () => {
             </div>
 
             {/** --------- Description & Review Section */}
+
+            <div className='mt-20'>
+                <div className='flex '>
+                    <p className='border px-5 py-3 text-sm'>Description</p>
+                    <p className='border px-5 py-3 text-sm'>Reviews(122)</p>
+
+                </div>
+                <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500 '>
+                    <p>asdfghjkquiopsfghj</p>
+                    <p> aweefwefijelfjlqejf;jwefjwefwffbdv,dfjqfwfjf;nssfk</p>
+                </div>
+            </div>
+
+            {/** display related products */}
+            <RelProducts />
         </div>
     ) : (
         <div className="opacity-100 text-center">Loading...</div>
